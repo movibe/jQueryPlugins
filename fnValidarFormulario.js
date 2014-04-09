@@ -4,7 +4,7 @@
 	 * validarFormulario
 	 *
 	 * @author Willian Ribeiro Angelo <willian.ribeiro.angelo@gmail.com>
-	 * @package Mauser BI 2.0
+	 * @package jQueryPlugin
 	 */
 
 	//Versão
