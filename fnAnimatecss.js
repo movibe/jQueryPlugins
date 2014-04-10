@@ -12,18 +12,24 @@
 	 * Adicione este Arquivo no seu Projeto
 	 *
 	 * Como Usar:
-	 * $(obj).animateCSS('pulse');
+	 * $(obj).animateCSS();
+	 * $(obj).animateCSS('amimacao' : 'pulse');
 	 *
 	 */
 
+	// Function
+	$.fn.animateCSS = function ( parametros ) {
 
-	//Versão
-	var VERSION = '1.0';
+		var parametrosPadrao = {
+			'animacao': 'pulse'
+		};
 
-	// Funções
-	$.fn.animateCSS = function ( animacao ) {
-		$( this ).addClass( animacao + ' animated' ).one( 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
-			$( this ).removeClass( animacao + ' animated' );
+		// Mescla os parametros 
+		parametros = $.extend( parametrosPadrao, parametros );
+
+
+		$( this ).addClass( parametros.animacao + ' animated' ).one( 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
+			$( this ).removeClass( parametros.animacao + ' animated' );
 			$( this ).focus();
 		} );
 	}
